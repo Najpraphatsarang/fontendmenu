@@ -12,6 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily:{
+        'Noto Sans Thai':['Noto Sans Thai','sans-serif'],
+      }
     },
   },
   plugins: [],

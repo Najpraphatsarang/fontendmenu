@@ -2,14 +2,10 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+// นำเข้า Noto Sans Thai ฟอนต์
+const notoSansThai = localFont({
+  src: "./fonts/Noto_Sans_Thai/NotoSansThai-VariableFont_wdth,wght.ttf", // แก้ไข src ฟอนต์
+  variable: "--font-noto-sans-thai",
   weight: "100 900",
 });
 
@@ -25,10 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${notoSansThai.variable} antialiased`}>
+        <div className="w-full min-h-screen">
+          {children} {/* ย้าย children เข้าไปใน div */}
+        </div>
       </body>
     </html>
   );
